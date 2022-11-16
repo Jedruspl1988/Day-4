@@ -1,6 +1,6 @@
 
 
-class Cart():
+class ShoppingCart():
     def __init__(self, cart = []): 
         # ITEM ONE
         # added_items, removed_items, and current_items are parameters
@@ -27,7 +27,7 @@ class Cart():
    
     def add_to_cart(self):
         # ITEM THREE
-        added_item = input('What would you like to add?')
+        added_item = input('What would you like to add?\n')
         self.cart.append(added_item) # This is one example of how to modify an 
         # existing class attribute.
         print(f'{added_item} are added to your cart')
@@ -38,7 +38,7 @@ class Cart():
 
     def run(self):
         while True:
-            selection = input('What would you like to do? Use \'+\' to add, \'-\' to delete, and \'q\' to quit.').lower()
+            selection = input('What would you like to do? Use \'+\' to add, \'-\' to delete, \'p\' to print current cart and \'q\' to quit.\n').lower()
             if selection != 'q':
                 if selection == '+':
                     self.add_to_cart()
@@ -50,7 +50,7 @@ class Cart():
                 break
 
     def remove_from_cart(self):
-        removed_items = input('What would you like to remove?')
+        removed_items = input('What would you like to remove?\n')
         if removed_items in self.cart:
             print(f'{removed_items} was removed from the cart')
             self.cart.remove(removed_items)
@@ -62,6 +62,6 @@ class Cart():
         for current_items in self.cart:
             print(current_items)
 
-my_program_example = Cart().run() 
+my_program_example = ShoppingCart().run() 
 # This instantiates the Cart() class, calls the run method, 
 # and sets the results of the run method equal to a variable.
